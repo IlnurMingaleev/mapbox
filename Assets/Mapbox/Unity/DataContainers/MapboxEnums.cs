@@ -248,10 +248,7 @@
 		[Description("Extrude all features using the fixed value.")]
 #endif
 		AbsoluteHeight,
-#if !ENABLE_WINMD_SUPPORT
-		[Description("Extrude floors in buildings")]
-#endif
-		FloorHeight
+
 
 	}
 
