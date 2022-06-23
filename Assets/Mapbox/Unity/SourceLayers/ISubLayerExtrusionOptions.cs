@@ -81,6 +81,5 @@ namespace Mapbox.Unity.SourceLayers
 		/// <param name="maxHeight">Top bound to be used for extrusion</param>
 		/// <param name="extrusionScaleFactor">Height multiplier</param>
 		void EnableRangeExtrusion(ExtrusionGeometryType extrusionGeometryType, float minHeight, float maxHeight, float extrusionScaleFactor = 1);
-
 	}
 }
