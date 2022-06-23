@@ -59,6 +59,8 @@
 
 			var minHeightProperty = property.FindPropertyRelative("minimumHeight");
 			var maxHeightProperty = property.FindPropertyRelative("maximumHeight");
+			var floorStartHeight = property.FindPropertyRelative("floorStartHeight");
+			var floorHeight = property.FindPropertyRelative("floorHeight");
 
 			var extrusionGeometryType = property.FindPropertyRelative("extrusionGeometryType");
 			var extrusionGeometryGUI = new GUIContent { text = "Geometry Type", tooltip = EnumExtensions.Description((Unity.Map.ExtrusionGeometryType)extrusionGeometryType.enumValueIndex) };
@@ -96,6 +98,11 @@
 					EditorGUILayout.PropertyField(extrusionGeometryType, extrusionGeometryGUI);
 					EditorGUILayout.PropertyField(maxHeightProperty, new GUIContent { text = "Height" });
 					break;
+				case Unity.Map.ExtrusionType.FloorHeight:
+					EditorGUILayout.PropertyField(extrusionGeometryType, extrusionGeometryGUI);
+					EditorGUILayout.PropertyField(floorStartHeight, new GUIContent { text = "FloorStartHeight" });
+					EditorGUILayout.PropertyField(floorHeight, new GUIContent { text = "FloorHeight" });
+				break;
 				default:
 					break;
 			}

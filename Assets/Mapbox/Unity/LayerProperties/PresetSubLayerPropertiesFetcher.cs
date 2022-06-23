@@ -27,6 +27,8 @@
 			string propertyName = "height";
 			float extrusionScaleFactor = 1.0f;
 			float extrusionHeight = 1.0f;
+			float startFloorHeight = 0f;
+			float floorHeiht = 3.0f;
 
 			//Filter Options
 			LayerFilterCombinerOperationType combinerType = LayerFilterCombinerOperationType.Any;

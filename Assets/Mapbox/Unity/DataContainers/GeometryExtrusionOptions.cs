@@ -25,6 +25,8 @@ namespace Mapbox.Unity.Map
 		[Tooltip("Property name in feature layer to use for extrusion.")]
 		public string propertyName = "height";
 		public string propertyDescription = "";
+		public float floorStartHeight = 0f;
+		public float floorHeight = 0f;
 		public float minimumHeight = 0f;
 		public float maximumHeight = 0f;
 		[Tooltip("Scale factor to multiply the extrusion value of the feature.")]
@@ -207,6 +209,19 @@ namespace Mapbox.Unity.Map
 				minimumHeight = minHeight;
 				maximumHeight = maxHeight;
 				this.extrusionScaleFactor = extrusionScaleFactor;
+				HasChanged = true;
+			}
+		}
+		public virtual void EnableFloorExtrusion(ExtrusionGeometryType extrusionGeometryType, float floorStartHeight, float floorHeight) 
+		{
+			if (extrusionType != ExtrusionType.FloorHeight ||
+				this.extrusionGeometryType != extrusionGeometryType ||
+				!Mathf.Approximately(this.floorStartHeight, floorStartHeight)||
+				!Mathf.Approximately(this.floorHeight, floorHeight))
+
+			{
+				extrusionType = ExtrusionType.RangeHeight;
+				this.extrusionGeometryType = extrusionGeometryType;
 				HasChanged = true;
 			}
 		}

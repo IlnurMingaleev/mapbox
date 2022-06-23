@@ -81,5 +81,18 @@ namespace Mapbox.Unity.SourceLayers
 		/// <param name="maxHeight">Top bound to be used for extrusion</param>
 		/// <param name="extrusionScaleFactor">Height multiplier</param>
 		void EnableRangeExtrusion(ExtrusionGeometryType extrusionGeometryType, float minHeight, float maxHeight, float extrusionScaleFactor = 1);
+
+		/// /// <summary>
+		/// Changes extrusion type to "FloorHeight" and extrudes all features by
+		/// the choosen property's value such that they will extrude buildings from the given floorStartHeight
+		/// to the given floorHeight.
+		/// </summary>
+		/// <param name="extrusionGeometryType">Option to create top and side polygons after extrusion.</param>
+		/// <param name="minHeight">Lower bound to be used for extrusion</param>
+		/// <param name="maxHeight">Top bound to be used for extrusion</param>
+		/// <param name="extrusionScaleFactor">Height multiplier</param>
+
+		void EnableFloorExtrusion(ExtrusionGeometryType extrusionGeometryType, float floorStartHeight, float floorHeight);
+
 	}
 }
